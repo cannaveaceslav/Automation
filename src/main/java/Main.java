@@ -37,12 +37,11 @@ public class Main {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
         String birthday = sdf.format(date1);
         String email = "A3TM" + faker.internet().emailAddress();
+        //----passport
         String phone = faker.phoneNumber().cellPhone();
         int passport_seria = (int)(Math.random() * 9999);
         int passport_number = (int)(Math.random() * 999999);
-        //long passport2 = (long) (Math.random() * 9999999999);
         String passport =String.valueOf(passport_seria) +String.valueOf(passport_number);
-        System.out.println(passport);
         //////////////////////
         System.setProperty("webdriver.chrome.driver", "C:/vcanna/chromedriver.exe");
         //Podbor-kredita    STEP 1
