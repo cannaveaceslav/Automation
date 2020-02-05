@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.io.File;
+import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -21,7 +21,7 @@ import java.util.Set;
 
 public class Main {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException {
 
         Faker faker = new Faker(new Locale("ru-RU"));
         String firstname = faker.name().firstName();
@@ -29,6 +29,7 @@ public class Main {
         String secondname = faker.name().firstName();
         Address placeOfBirth = faker.address();
 
+        String a = "https://beier.com/quo-quia-rerum-sint-quod-maxime-porro-quia.html?utm_source=cpashka&clickId=e45b4780-3ebd-11ea-b901-d7ad4eb59808";
 
 
 
@@ -81,30 +82,28 @@ public class Main {
      driver.findElement(By.xpath("//button[@class='button button--info advice-block__button']")).click();// номер дома
 
 
-        //Thread.sleep(3000);
-        //WebElement exit = driver.findElement((By.className("//span[contains(text(),'×')]")));
-        //exit.click();/*
-    /* WebElement countryUL= driver.findElement(By.xpath("//section[1]//ul[1]"));
-     List<WebElement> countriesList=countryUL.findElements(By.tagName("li"));
-     for (WebElement li : countriesList) {
-      if (li.getText().equals("Узнать решение")) {
-       li.click();
-      }
-     }*/
+//        InputStream inStream = new FileInputStream("c:/source.txt");
+//        OutputStream outStream = new FileOutputStream("c:/result.txt");
+//
+//        while (inStream.available() > 0)
+//        {
+//            int data = inStream.read(); //читаем один байт из потока для чтения
+//            outStream.write(data); //записываем прочитанный байт в другой поток.
+//        }
+//
+//        inStream.close(); //закрываем потоки
+//        outStream.close();
 
 
-     /*
-        WebElement offersUL = driver.findElement(By.xpath("//section[1]//ul[1]"));
-        List<WebElement> offersList = offersUL.findElements(By.tagName("li"));
-        System.out.println(offersList.size());
-        for (WebElement li : offersList) {
-            li.click();
-            Thread.sleep(3000);
-            driver.findElement((By.className("//span[contains(text(),'×')]"))).click();
-        }*/
 
     }
     //  driver.quit();
     //Thread.sleep(3000);
 }
 
+/*
+        String text = "https://beier.com/quo-quia-rerum-sint-quod-maxime-porro-quia.html?utm_source=cpashka&clickId=111e45b4780-3ebd-11ea-b901-d7ad4eb59808111";
+        String[] words = text.split("clickId=");
+        for(String word : words){
+            System.out.println(word);
+        }*/
